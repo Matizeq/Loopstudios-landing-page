@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+body {
+    min-height: 100vh;
+}
+
+@mixin section-padding {
+    padding: 80px 150px 150px 130px;
+}
+
+@mixin list {
+    ul {
+        display: flex;
+        list-style-type: none;
+        color: $white;
+        font-family: 'Alata', sans-serif;
+        margin-top: 10px;
+        li {
+            margin-left: 40px;
+            font-size: 15px;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+}
+
+@mixin pseudo-element($width: width) {
+    li::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0;
+        background-color: $white;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s;
+    }
+    li:hover::before{
+        width: $width;
+    }
+}
+
+.hero {
+    background: url(images/desktop/image-hero.jpg);
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    @include section-padding;
+    position: relative;
+    margin-bottom: 100px;
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .hero-logo {
+            width: 230px;
+            height: 40px;
+        }
+        .hamburger-button {
+            display: none;
+        }
+        @include list;
+        @include pseudo-element($width: 80%);
+    }
+    .slogan {
+        border: 2px solid $white;
+        width: 750px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 50px 30px 30px;
+        position: absolute;
+        bottom: 150px;
+        h1 {
+            color: $white;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 200;
+            font-size: 90px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.description {
+    height: 80vh;
+    @include section-padding;
+    padding-bottom: 0;
+    .description-container {
+        position: relative;
+        .guy {
+            position: relative;
+            z-index: 1;
+        }
+        .info {
+            width: 560px;
+            position: absolute;
+            background-color: $white;
+            padding: 80px 0px 0px 80px;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            h1 {
+                text-transform: uppercase;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 45px;
+                font-weight: 200;
+                margin-bottom: 30px;
+            }
+            p {
+                font-family: 'Alata', sans-serif;
+                line-height: 1.7;
+            }
+        }
+    }
+}
+
+.creations {
+    height: max-content;
+    @include section-padding;
+    .gallery-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .title {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 40px;
+            font-weight: 200;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+        }
+        button {
+            padding: 5px 40px;
+            font-family: 'Alata', sans-serif;
+            background-color: $white;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        button:hover {
+            background-color: $black;
+            color: $white;
+            transition: .3s ease-in-out;
+        }
+        .gallery {
+            height: 950px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            .image {
+                position: relative;
+                cursor: pointer;
+                .img-description {
+                    position: absolute;
+                    width: 160px;
+                    bottom: 30px;
+                    left: 30px;
+                    color: $white;
+                    font-size: 30px;
+                    font-family: 'Josefin Sans', sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 200;
+                }
+                .grid {
+                    width: 130px;
+                }
+            }
+            .image:hover {
+                .photo {
+                    filter: opacity(0.3) ;
+                    transition: .3s ease-in-out;
+                }
+                .img-description {
+                    color: $black;
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    @include section-padding;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $black;
+    display: flex;
+    .nav-container {
+        width: 50%;
+        .footer-logo {
+            width: 140px;
+        }
+        @include list;
+        @include pseudo-element($width: 80%);
+        ul {
+            margin-top: 20px;
+            li {
+                margin-left: 0;
+                margin-right: 40px;
+            }
+        }
+    }
+    .media-container {
+        width: 50%;
+        text-align: end;
+        @include list;
+        @include pseudo-element($width: 80%);
+        ul {
+            margin-top: 0;
+            justify-content: end;
+            li {
+                margin-left: 15px;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+        p {
+            color: $dark-gray;
+            margin-top: 20px;
+            font-family: 'Alata', sans-serif;
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    @mixin mobile-padding {
+        padding: 50px 30px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero {
+        height: 80vh;
+        @include mobile-padding;
+        background: url(images/mobile/image-hero.jpg);
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 50px;
+        .hero-header {
+            .hero-logo {
+                width: 150px;
+                height: 25px;
+            }
+            nav {
+                margin-top: 5px;
+                .hamburger-button {
+                    background: url(images/icon-hamburger.svg);
+                    background-position: center;
+                    background-size: cover;
+                    height: 18px;
+                    width: 20px;
+                    border: none;
+                    cursor: pointer;
+                    display: block;
+                }
+                ul {
+                    display: none;
+                }
+            }
+        }
+        .slogan {
+            width: 280px;
+            max-height: max-content;
+            display: block;
+            padding: 20px 30px 20px 20px;
+            top: 50%;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            h1 {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .active {
+        background: none;
+        position: fixed;
+        background-color: $black;
+        height: 100vh;
+        width: 100vw;
+        z-index: 3;
+        .hero-header {
+            nav {
+                margin-right: 17px;
+                .hamburger-button {
+                    background: url(images/icon-close.svg);
+                    background-position: center;
+                    background-size: cover;
+                }
+                ul {
+                    display: block;
+                    position: absolute;
+                    left: 0%;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    li {
+                        font-family: 'Josefin Sans', sans-serif;
+                        font-size: 30px;
+                        text-transform: uppercase;
+                        margin-bottom: 30px;
+                    }
+                    @include pseudo-element($width: 0%);
+                }
+            }
+        }
+        .slogan {
+            display: none;
+        }
+    }
+
+    .description {
+        height: 60vh;
+        @include mobile-padding;
+        .description-container {
+            display: flex;
+            flex-direction: column;
+            position: unset;
+            .guy {
+                margin-bottom: 20px;
+            }
+            .info {
+                position: unset;
+                width: 100%;
+                padding: 30px 5px;
+                h1 {
+                    text-align: center;
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+                p {
+                    text-align: center;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .creations {
+        @include mobile-padding;
+        padding-bottom: 160px;
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            .title {
+                text-align: center;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
+            button {
+                top: 102%;
+                right: 50%;
+                transform: translate(50%);
+                padding: 7px 33px;
+                font-size: 15px;
+            }
+            .gallery {
+                height: max-content;
+                .image {
+                    .photo {
+                        width: 100%;
+                        margin-bottom: 15px;
+                    }
+                    .img-description {
+                        font-size: 22px;
+                        width: 130px;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        @include mobile-padding;
+        flex-direction: column;
+        .nav-container {
+            width: 100%;
+            text-align: center;
+            ul {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 30px;
+                li {
+                    width: max-content;
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+        .media-container {
+            width: 100%;
+            text-align: center;
+            ul {
+                justify-content: center;
+            }
+        }
+    }
+}

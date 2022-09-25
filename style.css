@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.hero {
+  background: url(images/desktop/image-hero.jpg);
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 150px 150px 130px;
+  position: relative;
+  margin-bottom: 100px;
+}
+.hero header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.hero header .hero-logo {
+  width: 230px;
+  height: 40px;
+}
+.hero header .hamburger-button {
+  display: none;
+}
+.hero header ul {
+  display: flex;
+  list-style-type: none;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Alata", sans-serif;
+  margin-top: 10px;
+}
+.hero header ul li {
+  margin-left: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.hero header li::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: hsl(0deg, 0%, 100%);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.hero header li:hover::before {
+  width: 80%;
+}
+.hero .slogan {
+  border: 2px solid hsl(0deg, 0%, 100%);
+  width: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 50px 30px 30px;
+  position: absolute;
+  bottom: 150px;
+}
+.hero .slogan h1 {
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  font-size: 90px;
+  text-transform: uppercase;
+}
+
+.description {
+  height: 80vh;
+  padding: 80px 150px 150px 130px;
+  padding-bottom: 0;
+}
+.description .description-container {
+  position: relative;
+}
+.description .description-container .guy {
+  position: relative;
+  z-index: 1;
+}
+.description .description-container .info {
+  width: 560px;
+  position: absolute;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 80px 0px 0px 80px;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.description .description-container .info h1 {
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 45px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+.description .description-container .info p {
+  font-family: "Alata", sans-serif;
+  line-height: 1.7;
+}
+
+.creations {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 80px 150px 150px 130px;
+}
+.creations .gallery-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.creations .gallery-container .title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+.creations .gallery-container button {
+  padding: 5px 40px;
+  font-family: "Alata", sans-serif;
+  background-color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.creations .gallery-container button:hover {
+  background-color: hsl(0deg, 0%, 0%);
+  color: hsl(0deg, 0%, 100%);
+  transition: 0.3s ease-in-out;
+}
+.creations .gallery-container .gallery {
+  height: 950px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.creations .gallery-container .gallery .image {
+  position: relative;
+  cursor: pointer;
+}
+.creations .gallery-container .gallery .image .img-description {
+  position: absolute;
+  width: 160px;
+  bottom: 30px;
+  left: 30px;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 30px;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.creations .gallery-container .gallery .image .grid {
+  width: 130px;
+}
+.creations .gallery-container .gallery .image:hover .photo {
+  filter: opacity(0.3);
+  transition: 0.3s ease-in-out;
+}
+.creations .gallery-container .gallery .image:hover .img-description {
+  color: hsl(0deg, 0%, 0%);
+  transition: 0.3s ease-in-out;
+}
+
+.footer {
+  padding: 80px 150px 150px 130px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: hsl(0deg, 0%, 0%);
+  display: flex;
+}
+.footer .nav-container {
+  width: 50%;
+}
+.footer .nav-container .footer-logo {
+  width: 140px;
+}
+.footer .nav-container ul {
+  display: flex;
+  list-style-type: none;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Alata", sans-serif;
+  margin-top: 10px;
+}
+.footer .nav-container ul li {
+  margin-left: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.footer .nav-container li::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: hsl(0deg, 0%, 100%);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.footer .nav-container li:hover::before {
+  width: 80%;
+}
+.footer .nav-container ul {
+  margin-top: 20px;
+}
+.footer .nav-container ul li {
+  margin-left: 0;
+  margin-right: 40px;
+}
+.footer .media-container {
+  width: 50%;
+  text-align: end;
+}
+.footer .media-container ul {
+  display: flex;
+  list-style-type: none;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Alata", sans-serif;
+  margin-top: 10px;
+}
+.footer .media-container ul li {
+  margin-left: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.footer .media-container li::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: hsl(0deg, 0%, 100%);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.footer .media-container li:hover::before {
+  width: 80%;
+}
+.footer .media-container ul {
+  margin-top: 0;
+  justify-content: end;
+}
+.footer .media-container ul li {
+  margin-left: 15px;
+}
+.footer .media-container ul li img {
+  width: 20px;
+}
+.footer .media-container p {
+  color: hsl(0deg, 0%, 55%);
+  margin-top: 20px;
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+}
+
+@media (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+  }
+  .hero {
+    height: 80vh;
+    padding: 50px 30px;
+    background: url(images/mobile/image-hero.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 50px;
+  }
+  .hero .hero-header .hero-logo {
+    width: 150px;
+    height: 25px;
+  }
+  .hero .hero-header nav {
+    margin-top: 5px;
+  }
+  .hero .hero-header nav .hamburger-button {
+    background: url(images/icon-hamburger.svg);
+    background-position: center;
+    background-size: cover;
+    height: 18px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+  }
+  .hero .hero-header nav ul {
+    display: none;
+  }
+  .hero .slogan {
+    width: 280px;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+    display: block;
+    padding: 20px 30px 20px 20px;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+  }
+  .hero .slogan h1 {
+    font-size: 35px;
+  }
+  .active {
+    background: none;
+    position: fixed;
+    background-color: hsl(0deg, 0%, 0%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+  }
+  .active .hero-header nav {
+    margin-right: 17px;
+  }
+  .active .hero-header nav .hamburger-button {
+    background: url(images/icon-close.svg);
+    background-position: center;
+    background-size: cover;
+  }
+  .active .hero-header nav ul {
+    display: block;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .active .hero-header nav ul li {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .active .hero-header nav ul li::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background-color: hsl(0deg, 0%, 100%);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+  }
+  .active .hero-header nav ul li:hover::before {
+    width: 0%;
+  }
+  .active .slogan {
+    display: none;
+  }
+  .description {
+    height: 60vh;
+    padding: 50px 30px;
+  }
+  .description .description-container {
+    display: flex;
+    flex-direction: column;
+    position: unset;
+  }
+  .description .description-container .guy {
+    margin-bottom: 20px;
+  }
+  .description .description-container .info {
+    position: unset;
+    width: 100%;
+    padding: 30px 5px;
+  }
+  .description .description-container .info h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .description .description-container .info p {
+    text-align: center;
+    font-size: 15px;
+  }
+  .creations {
+    padding: 50px 30px;
+    padding-bottom: 160px;
+  }
+  .creations .gallery-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .creations .gallery-container .title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+  .creations .gallery-container button {
+    top: 102%;
+    right: 50%;
+    transform: translate(50%);
+    padding: 7px 33px;
+    font-size: 15px;
+  }
+  .creations .gallery-container .gallery {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .creations .gallery-container .gallery .image .photo {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .creations .gallery-container .gallery .image .img-description {
+    font-size: 22px;
+    width: 130px;
+    left: 20px;
+  }
+  .footer {
+    padding: 50px 30px;
+    flex-direction: column;
+  }
+  .footer .nav-container {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .nav-container ul {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .footer .nav-container ul li {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 0 20px 0;
+  }
+  .footer .media-container {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .media-container ul {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
